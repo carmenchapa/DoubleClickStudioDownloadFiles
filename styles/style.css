@@ -1,0 +1,31 @@
+body{
+
+    text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+#container{
+	margin: 20%;
+}
+
+.stuff{
+	color: #FFF;
+}
+
+button{
+	:hover: none;
+	:visited:none;
+	:link: none;
+	:active: none;
+	height: 30px;
+	border: none;
+	padding: !important;
+	background: none;
+}
+
+h2{
+	color: grey;
+	padding-bottom: 15%;
+}
