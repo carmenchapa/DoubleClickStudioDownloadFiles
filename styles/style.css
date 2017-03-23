@@ -1,3 +1,8 @@
+  html, body {
+            height: 100%;
+            margin: 0;
+        }
+
 body{
 
     text-transform: uppercase;
@@ -6,8 +11,13 @@ body{
 	text-align: center;
 }
 
+#cont{
+	position:relative;
+	height: 100%;
+}
+
 #container{
-	margin: 20%;
+	margin: auto;
 }
 
 .stuff{
