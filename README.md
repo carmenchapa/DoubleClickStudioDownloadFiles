@@ -1,4 +1,4 @@
-## Download Files from DoubleClick
+# Download Files from DoubleClick
 
 This project was created to provide a faster way of **downloading assets from the DoubleClick studio platform**. It was developed for Sky Works Digital team use. It gives the option of downloading all images from an assets folder in DC Studio platform on just one click.
 
@@ -7,6 +7,7 @@ If you work with DoubleClick Studio creatives you would probably love this solut
 ## Getting Started
 
 For running it localy, download the repository and run a pyton server on the folder you saved it:
+
 	```
     python -m SimpleHTTPServer
     ```
