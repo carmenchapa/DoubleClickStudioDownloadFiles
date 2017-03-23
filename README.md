@@ -8,9 +8,9 @@ If you work with DoubleClick Studio creatives you would probably love this solut
 
 For running it localy, download the repository and run a pyton server on the folder you saved it:
 
-	```
-    python -m SimpleHTTPServer
-    ```
+```
+python -m SimpleHTTPServer
+```
 
 Then, go to your browser and run localhost:8000
 
