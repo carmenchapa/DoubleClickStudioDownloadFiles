@@ -18,7 +18,7 @@ Then, go to your browser and run localhost:8000
 
 Go to the assets folder you want to download the assets from and click the checkbox on the right of the name, click on the **dynamic paths** downloading button that will appear and a .csv file will be downloaded on your machine.
 
-Drag or upload this file on the file field.
+Drag or upload this .csv file on the file field.
 
 ### Provide the folder base path
 
