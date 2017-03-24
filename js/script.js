@@ -98,4 +98,5 @@ function download(){
 	downloadFilesModel.start();	
 	downloadFilesModel.downloadFiles();	
 	downloadFilesModel.removeAll();
+	location.reload();
 }
