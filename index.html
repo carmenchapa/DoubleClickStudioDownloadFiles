@@ -10,25 +10,22 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Downloading Files</title>
-  
 </head>
-<body >
-
-
-
+<body>
 
 <div id = "cont" class = "valign-wrapper">
 <div id = "container" class = "valign">
-  <h2 class = 'text-darken'>Download Files</h2>
-  <form onsubmit="return getFolderPath();">
-    <div class="file-field input-field">
+  <h2 ><span class = ' grey-text text-lighten-1'>Download Files</span></h2>
+  <form id="form" onsubmit="">
+    <div class="input-field file-field">
       <div class="btn">
         <span>File</span>
         <input type="file" id="fileCSV" >
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
+        <input id="file-path" class="file-path validate" type="text">
       </div>
       <div class="row">
         <div class="input-field col s12">
@@ -38,22 +35,18 @@
       </div>
     </div>
   </form>
-
+  
+  
 <div >
   <button class="btn" type="button" onclick="download()">Download</button>
 </div>
 </div>
 </div>
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <!--Compiled and minified materialize.js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 <script type = "text/javascript" src= "js/script.js"></script>
-
-
-
 
 </body>
 </html>
