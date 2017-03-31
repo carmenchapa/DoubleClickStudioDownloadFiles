@@ -1,15 +1,10 @@
 var downloadFilesModel = (function downloadFilesModel(){
-	// var urls = [];
-	var file, fileData, basePath;
-
-	var myData = [];
-	var file = "file.csv";
-	var realPath;
-	elem = [];
-	// var realPath = this.getFolderPath();
+	var file, fileData, basePath, form, elem = [];	
+	
 	var start = function(){
 		if(checkParameters()){
 			//alert('Nothing is missing!');
+			//Comentario para git
 			var arrayUrlAssets = prepareUrlAssets();
 			var arrayHtmlElements = prepareHtmlElements(arrayUrlAssets);
 
@@ -22,7 +17,7 @@ var downloadFilesModel = (function downloadFilesModel(){
 		var checked = false;
 	 	file = document.getElementById("fileCSV").value;
 		basePath = document.getElementById("folder-path").value;
-		if((file !== "" && file !== undefined) && (basePath!== "" && basePath !== undefined)){
+		if((file !== "" && file !== undefined) && (basePath!== "" && basePath !== undefined)){	
 			checked = true;
 		}
 		return checked;
@@ -43,29 +38,36 @@ var downloadFilesModel = (function downloadFilesModel(){
 		var dirtyData = data.split('\n');
 
 		var newArray = dirtyData.map(function(val){
+			
 		 	var num=val.lastIndexOf(",");
-			var title=val.substring(0,num) 
+			var first=val.substring(0,num);
+			var slash=first.indexOf('/');
+			var title=first.substring(slash + 1);
+
+			console.log(title);
 			return title;
 		})
 		return newArray;
   	};
 
     var prepareHtmlElements = function (arr){	
+    	elem = [];
 		for(i=0; i<arr.length; i++){
-			elem.push($("<a>").attr("href", arr[i]).attr("download", "img.png", "img.jpg").appendTo("body"))
+			elem.push($("<a>").attr("href", arr[i]).attr("download", "img.png", "img.jpg", "*.js").appendTo("body"))
 		}	
 	console.log(elem);	
 	}
-
 
 	var setFileData = function(data){
 		fileData = data;
 	}
 
 	var downloadFiles =  function (){
+		console.log("start download");
 		for(i=0;i<elem.length;i++){
 			elem[i][0].click();
 		}
+		//elem = [];
 	}
 	var removeAll = function (){
 		for(i=0;i<elem.length;i++){
@@ -74,17 +76,17 @@ var downloadFilesModel = (function downloadFilesModel(){
 	}
 
 	return{
+		start : start,
 		downloadFiles : downloadFiles,
 		removeAll : removeAll,
-		setFileData : setFileData,
-		start : start
+		setFileData : setFileData
 	};
 })();
 
-
-document.getElementById('fileCSV').addEventListener('change', handleFileSelect, false);
+document.getElementById('fileCSV').addEventListener('change', handleFileSelect, true);
 
 function handleFileSelect(event){
+	console.log("storing file");
 	var file = event.target.files[0];
 	var reader = new FileReader();
 	reader.onload = function(event) {
@@ -93,10 +95,13 @@ function handleFileSelect(event){
 	reader.readAsText(file);
 }
 
-
 function download(){
 	downloadFilesModel.start();	
-	downloadFilesModel.downloadFiles();	
+	downloadFilesModel.downloadFiles();		
 	downloadFilesModel.removeAll();
-	location.reload();
+	
+	document.getElementById("fileCSV").value = "";
+	document.getElementById("file-path").value = "";
+	document.getElementById("folder-path").value = "";
+
 }
