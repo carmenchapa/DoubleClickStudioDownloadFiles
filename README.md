@@ -41,10 +41,6 @@ Click on the download button and your assets will be downloaded.
 
 * **[Carmen Chapa](https://github.com/carmenchapa)**
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * [Evgeniya](https://github.com/evgeniyaaa)
